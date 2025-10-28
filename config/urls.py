@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('core.auth_urls')),
     path('api/', include('core.api_urls')),
-
+    path('api/', include('core.subscriptions.urls')),
     # OpenAPI schema and documentation
     path('docs/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),

@@ -89,6 +89,7 @@ class ChangePasswordSerializer(serializers.Serializer):
 
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
+    profile_image = serializers.ImageField(required=False, allow_null=True)
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'profile_image')

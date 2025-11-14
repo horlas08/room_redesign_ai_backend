@@ -228,8 +228,9 @@ class GuestGenerateView(APIView):
                 name='GuestGenerateForm',
                 fields={
                     'style_choice': serializers.ChoiceField(choices=[c[0] for c in RoomRedesign.STYLE_CHOICES]),
-                    'original_image': serializers.FileField(),
-                }
+                    'original_image': serializers.ImageField(allow_empty_file=False),
+                },
+
             )
         },
         responses={
